@@ -1,14 +1,14 @@
 
 username= process.env.bamboo_LT_USERNAME || "<your username>",
 accessKey=  process.env.bamboo_LT_ACCESS_KEY || "<your accessKey>",
-buildName = process.bamboo_buildResultKey
+buildName = process.env.bamboo_buildResultKey
 exports.config = {
   'specs': ['../specs/single.js'],
 
   seleniumAddress: 'https://'+ username +':'+ accessKey  +'@hub.lambdatest.com/wd/hub',
 
   'capabilities': {
-    'build': 'protractor-LambdaTest-Single',
+    'build': buildName,
     'browserName': 'chrome',
     'version':'latest',
     'platform': 'Windows 10',
