@@ -1,7 +1,7 @@
 
 username= process.env.bamboo_LT_USERNAME || "<your username>",
 accessKey=  process.env.bamboo_LT_ACCESS_KEY || "<your accessKey>",
-
+buildName = process.bamboo_buildResultKey
 exports.config = {
   'specs': ['../specs/single.js'],
 
