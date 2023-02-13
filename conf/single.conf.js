@@ -1,7 +1,8 @@
 
 username= process.env.bamboo_LT_USERNAME,
 accessKey=  process.env.bamboo_LT_ACCESS_KEY,
-buildName = process.env.bamboo_LT_BUILD_NAME
+buildName = process.env.bamboo_LT_BUILD_NAME,
+tunnelName =  process.env.bamboo_LT_TUNNEL_NAME
 exports.config = {
   'specs': ['../specs/single.js'],
 
@@ -12,6 +13,8 @@ exports.config = {
     'browserName': 'chrome',
     'version':'latest',
     'platform': 'Windows 10',
+    'tunnel': true,
+    'tunnelName':tunnelName
   },
   onPrepare: () => {
 
